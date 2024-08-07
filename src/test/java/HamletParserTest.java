@@ -49,4 +49,11 @@ public class HamletParserTest {
         //Check that "Hamlet" is present in the OG text
         assertTrue(originalText.contains("Hamlet"));
     }
+
+    @Test
+    public void testFileRead() {
+        //Add a test to ensure the file is read correctly
+        String content = hamletParser.getHamletData();
+        assertNotNull(content);
+    }
 }

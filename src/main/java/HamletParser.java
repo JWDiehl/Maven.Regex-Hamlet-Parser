@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -59,10 +60,15 @@ public class HamletParser {
 
     //Method to save the modified text to a new file
     public void saveToFile(String outputPath) {
-        try {
-            Files.write(Paths.get(outputPath), replaceText().getBytes());
+        try (FileWriter writer = new FileWriter(outputPath)) {
+    writer.write(replaceText());
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+   public static void main(String[] args) {
+       HamletParser parser = new HamletParser();
+       parser.saveToFile("modified_hamlet.txt");
     }
 }

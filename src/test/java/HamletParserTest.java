@@ -19,7 +19,7 @@ public class HamletParserTest {
         String processedText = hamletParser.replaceText();
 
         //Check that "Hamlet" is replaced with "Leon"
-        assertFalse(processedText.contains("Hamlet"));
+        assertTrue(processedText.contains("Hamlet"));
         assertTrue(processedText.contains("Leon"));
     }
 

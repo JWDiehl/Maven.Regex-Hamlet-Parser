@@ -10,6 +10,7 @@ public class HamletParser {
     private String hamletData;
 
     public HamletParser(){
+
         this.hamletData = loadFile();
     }
 
@@ -33,6 +34,7 @@ public class HamletParser {
     }
 
     public String getHamletData(){
+
         return hamletData;
     }
 
